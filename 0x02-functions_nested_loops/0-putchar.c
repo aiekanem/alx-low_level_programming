@@ -1,12 +1,15 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0 (Success)
+ * main - print alx
+ * Return: 0 if succesful
  */
 int main(void)
 {
-    printf("_putchar\n");
-    return (0);
+_putchar('a');
+_putchar('l');
+_putchar('x');
+_putchar('\n');
+
+return (0);
 }
