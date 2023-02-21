@@ -1,15 +1,11 @@
 #include "main.h"
 
 /**
- * main - print alx
+ * main - Entry point
  * Return: 0 if succesful
  */
 int main(void)
 {
-_putchar('a');
-_putchar('l');
-_putchar('x');
-_putchar('\n');
-
-return (0);
+	printf("_putchar\n");
+	return (0);
 }
