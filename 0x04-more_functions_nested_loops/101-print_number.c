@@ -8,21 +8,37 @@
 
 void print_number(int n)
 {
-  int digit, divisor = 1;
+	int count, x, y, k;
 
-  if (n < 0) {
-    _putchar('-');
-    n *= -1;
-  }
+	x = 0;
+	y = 1000000000;
 
-  while (n / divisor >= 10) {
-    divisor *= 10;
-  }
-
-  while (divisor > 0) {
-    digit = n / divisor;
-    _putchar(digit + '0');
-    n -= digit * divisor;
-    divisor /= 10;
-  }
+	if (n == 0)
+		_putchar('0');
+	else if (n > 0)
+		n *= -1;
+	else
+	       	_putchar('-');
+	for (count = 0; count < 10; count++)
+	{
+		if (n / y == 0 && x == 0)
+		{
+			y /= 10;
+			
+			continue;
+		}
+		else if (x == 0)
+		{
+			_putchar(-(n / y) + '0');
+			x += 1;
+		}
+		else
+		{
+			k = (-(n / y) % 10);
+			if (k < 0)
+				k *= -1;
+			_putchar(k + '0');
+		}
+		y /= 10;
+	}
 }
