@@ -6,24 +6,20 @@
  * Return: encoded string
  */
 
-char *rot13(char *s)
+char *rot13(char *a)
 {
-	char *str = s;
-	int i, j;
+	int i, x, hold;
+	char check[] = "AaZz";
+	char ntom[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		for (j = 0; (str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'); j++)
+	for (i = 0; *(a + i) != '\0'; i++)
+		for (x = 0; x < 2; x++)
 		{
-			if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
-				str[i] += 13;
-			else
-				str[i] -= 13;
-
-			if (j == 0)
-				break;
+			if (*(a + i) >= check[x] && *(a + i) <= check[x + 2])
+			{
+				hold = (*(a + i) - 65 - (x * 32));
+				*(a + i) = (ntom[hold] + (x * 32));
+			}
 		}
-	}
-
-	return (s);
+	return (a);
 }
