@@ -7,10 +7,8 @@
  * Return: 0 on success.
  */
 
-int main(int argc, char *argv[])
+int main(__attribute__((unused)) int argc, char *argv[])
 {
-    char *program_name = get_program_name(argv[0]);
-    printf("%s\n", program_name);
-    free(program_name);
-    return EXIT_SUCCESS;
+	printf("%s\n", argv[0]);
+	return (0);
 }
