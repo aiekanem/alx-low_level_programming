@@ -2,21 +2,16 @@
 #include <stdio.h>
 
 /**
- * list_len - Returns the number of elements in a list_t list.
- * @h: A pointer to the head node of the list.
- * Return: The number of elements in the list.
+ * list_len - size of a list_t
+ * @h: struct list_t, first node
+ * Return: number of nodes
  */
 
 size_t list_len(const list_t *h)
 {
-    size_t len = 0;
+	int i;
 
-    while (h != NULL)
-    {
-        len++;
-        h = h->next;
-    }
-
-    return (len);
+	for (i = 0; h; i++, h = h->next)
+		;
+	return (i);
 }
-
